@@ -4,7 +4,6 @@ import styled from 'styled-components'
 
 
 const StyledCharacter = styled.div`
-    border: 1px solid black;
     width: 50vw;
     display: flex;
     flex-direction: row;
@@ -16,8 +15,6 @@ const StyledCharacter = styled.div`
     padding: 10px;
     margin-bottom: 10px;
 
-    
-
 `
 
 export default function CharacterList(props) {
@@ -25,7 +22,7 @@ export default function CharacterList(props) {
     const person = props.props;
     const personList = person.map((swPerson) => {
         return (
-            <StyledCharacter key={swPerson.id} >
+            <StyledCharacter key={swPerson.id}>
                 <h3>{swPerson.name}</h3>
                 <p>{swPerson.birth_year}</p>
             </StyledCharacter>
