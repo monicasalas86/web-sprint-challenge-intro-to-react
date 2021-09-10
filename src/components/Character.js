@@ -4,23 +4,19 @@ import styled from 'styled-components'
 
 
 const StyledCharacter = styled.div`
-    /* border: 1px solid black;
-    height: 80vh;
+    border: 1px solid black;
     width: 50vw;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     background-color: white;
     opacity: 80%;
-    border-radius: 5%;
-    padding: 5px; */
-    height: 100%;
-    margin: 1% 40%;
+    border-radius: 5px;
     padding: 10px;
-    border: 1px solid #b0a9a5;
-    border-radius: 10px;
-    color: #443e3e;
-    background-color: #e0dcda;
+    margin-bottom: 10px;
+
+    
 
 `
 
@@ -29,8 +25,9 @@ export default function CharacterList(props) {
     const person = props.props;
     const personList = person.map((swPerson) => {
         return (
-            <StyledCharacter key={swPerson.id}>
+            <StyledCharacter key={swPerson.id} >
                 <h3>{swPerson.name}</h3>
+                <p>{swPerson.birth_year}</p>
             </StyledCharacter>
 
         )
