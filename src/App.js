@@ -6,7 +6,7 @@ import Character from './components/Character'
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
-  const [characters, setCharacters] = useState([]);
+  const [character, setCharacter] = useState([]);
   
 
   // Fetch characters from the API in an effect hook. Remember, anytime you have a 
@@ -16,19 +16,17 @@ const App = () => {
     axios.get(`https://swapi.dev/api/people`)
     .then(res => {
       console.log(res.data)
-      setCharacters(res.data)
+      setCharacter(res.data)
     }).catch(err => {
       console.log(err)
     })
   }, [])
 
-  const characterName = characters.map(swCharacter => {
-    return swCharacter.name;
-  })
+  
   return (
     <div className="App">
       <h1 className="Header">Characters</h1>
-      <Character name={characterName}/>
+      <Character props={character} key={character.id}/>
     </div>
   );
 }
